@@ -45,20 +45,27 @@ This project demonstrates the process of normalizing a relational database schem
 
 ---
 
+## 🖼 Screenshots
+
+### 📌 Step 1: Initial Table → 1NF
+![1NF](p1_hw2.png)
+
+### 📌 Step 2: 2NF with Clients & Orders separated
+![2NF](p2_hw2.png)
+
+### 📌 Step 3: 3NF with Products moved to a new table
+![3NF](p3_hw2.png)
+
+### 📌 Final Navigator View in Workbench
+![Navigator](p4_hw2.png)
+
+---
+
 ## 🛠 Tools
 
 - MySQL Workbench
 - EER Diagram Designer
 - Manual schema creation and normalization
-
----
-
-## 📸 Screenshots
-
-Include the following screenshots:
-- Initial flat table
-- EER diagram (final structure)
-- Navigator panel with tables and foreign keys
 
 ---
 
