@@ -1,6 +1,6 @@
 # Database Design: Orders System (3NF)
 
-This project demonstrates the process of normalizing a relational database schema to the **Third Normal Form (3NF)** using MySQL Workbench.
+This project demonstrates the process of normalizing a relational database schema to the **Third Normal Form (3NF)** using MySQL Workbench, with additional improvements recommended by a mentor.
 
 ---
 
@@ -14,9 +14,10 @@ This project demonstrates the process of normalizing a relational database schem
 - `client_address`
 
 #### 2. `orders`
-- `order_id` (Primary Key)
+- `order_id` (Primary Key, technical)
 - `client_id` (Foreign Key → clients.client_id)
 - `order_date`
+- `order_number` (User-friendly identifier, e.g. "ORD-001", VARCHAR)
 
 #### 3. `products`
 - `product_id` (Primary Key)
@@ -25,7 +26,7 @@ This project demonstrates the process of normalizing a relational database schem
 #### 4. `orderdetails`
 - `order_id` (Foreign Key → orders.order_id)
 - `product_id` (Foreign Key → products.product_id)
-- `quantity`
+- `quantity` (`DECIMAL(10,2)` — to allow fractional quantities like 0.5 kg)
 
 ---
 
@@ -39,9 +40,12 @@ This project demonstrates the process of normalizing a relational database schem
 
 ## ✅ Normal Forms Achieved
 
-- **1NF**: Atomic values (e.g., no lists in a single field)
-- **2NF**: Removed partial dependencies (split into related tables)
-- **3NF**: Removed transitive dependencies (products stored separately)
+- **1NF**: Atomic values (no multiple values in single fields)
+- **2NF**: Removed partial dependencies (by splitting logically separate entities)
+- **3NF**: Removed transitive dependencies (by creating separate `products` table)
+- **Improvements**:
+  - Added `order_number` for business-friendly tracking
+  - Used `DECIMAL` for flexible quantities
 
 ---
 
